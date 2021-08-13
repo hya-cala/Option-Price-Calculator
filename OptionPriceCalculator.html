@@ -1,0 +1,69 @@
+<html>
+
+<head>
+  <title>Option Pricing Calculator</title>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,600,700">
+  <link rel="stylesheet" href="app.css">
+  </style>
+</head>
+
+<body>
+  <h1>Option Price Calculator</h1>
+  <section id='cal'>
+    <table width="100%" class="tb-01">
+      <tbody>
+
+        <tr>
+          <td><label for='S' scope="row">Current Stock Price</label>
+          <td><input type="text" value="42" name="S" id="S" maxlength="8" label="Current Price"></td>
+          </td>
+          <td><label for='vol'>Volatility</label>
+          <td><input type="text" value="0.2" name="vol" id="vol" maxlength="8" label="Volatility"></td>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row"><label for='L'>Executive Price</label>
+          <td><input type="text" value="40" name="L" id="L" maxlength="8" label="Executive Price"></td>
+          </td>
+          <td><label for='t'>Aging (Year)</label>
+          <td><input type="text" value="0.5" name="t" id="t" label="Option Aging"></td>
+          </td>
+        </tr>
+        <tr>
+          <td scope="row"><label for='r'>Risk-Free Interest Rate</label>
+          <td>
+            <input type="text" value="0.1" name="r" id="r" label="Risk-Free Interest Rate" maxlength="8">
+          </td>
+          </td>
+          <td><label for='cop'>Option Type</label>
+          <td>
+            <select id="cop" name='cop'>
+              <option value="0">European call option</option>
+              <option value="1">European put option</option>
+              <option value="2">American call option</option>
+              <option value="3">American put option</option>
+            </select>
+          </td>
+          </td>
+        </tr>
+
+      </tbody>
+
+    </table>
+    <input type="button" name="button2" id="button2" value="calculate" onclick="fbs()">
+
+
+    <div id="output"></div>
+  </section>
+  <div id="remark">
+    <h2>Remark</h2>
+    <ul>
+      <li>For European options, we use Black-Scholes exact solution.</li>
+      <li>For American options, we use binary tree to calculate approximate solution. </li>
+    </ul>
+  </div>
+</body>
+
+<script src="app.js"></script>
+
+</html>
